@@ -5,18 +5,20 @@ Func check_avalible_target()
    $color2 = 0xbdbebe
    $color3 = 0xc8c8c8
    $x = 737
-   $y = 241
+   $y = 163
    $dist_x = 154
    $dist_y = 17
    
    $state = 0
    ;; Проверка
-   $z1 = PixelSearch($x, $y, $x+$dist_x, $y+$dist_y, $color1)
-   $z2 = PixelSearch($x, $y, $x+$dist_x, $y+$dist_y, $color2)
-   $z3 = PixelSearch($x, $y, $x+$dist_x, $y+$dist_y, $color3)
-   If IsArray($z1) or IsArray($z2) or IsArray($z3) Then
-	  $state = 1
-   EndIf
+   For $i = 0 to 4
+	  $z1 = PixelSearch($x, $y+$i*$dist_y, $x+$dist_x, $y+$i*$dist_y+$dist_y, $color1)
+	  $z2 = PixelSearch($x, $y+$i*$dist_y, $x+$dist_x, $y+$i*$dist_y+$dist_y, $color2)
+	  $z3 = PixelSearch($x, $y+$i*$dist_y, $x+$dist_x, $y+$i*$dist_y+$dist_y, $color3)
+	  If IsArray($z1) or IsArray($z2) or IsArray($z3) Then
+		 $state = $state + 10 ^ $i
+	  EndIf
+   Next
    Return $state
 EndFunc
 
@@ -102,9 +104,9 @@ Func lock($check_lock)
    EndSwitch
 EndFunc
 
-Func lock_1()
+Func lock_1($belt_state)
    $res = 0
-   while $res <> 11111
+   while $res <> $belt_state
 	  $res = check_lock()
 	  lock($res)
 	  sleep(3000)
