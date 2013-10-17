@@ -1,0 +1,52 @@
+audio:
+  audioEnabled: [130263967742782738, 0]
+  eveampGain: [130229230652613291, 0.25]
+  evevoiceGain: [130229230652613291, 0.9]
+  masterVolume: [130229230652613291, 0.4]
+  suppressTurret: [130262933588609554, 0]
+  uiGain: [130229230652613291, 0.4]
+  worldVolume: [130229230652613291, 0.4]
+device:
+  DeviceSettings:
+  - 130263967749487731
+  - {Adapter: 0, AutoDepthStencilFormat: 1, BackBufferCount: 1, BackBufferFormat: 88,
+    BackBufferHeight: 768, BackBufferWidth: 1024, EnableAutoDepthStencil: true, Flags: 0,
+    FullScreen_RefreshRateInHz: 0, MultiSampleQuality: 0, MultiSampleType: 0, PresentationInterval: 17,
+    SwapEffect: 0, Windowed: true}
+  UIScaleFullscreen: [130262933588609554, 1.0]
+  UIScaleWindowed: [130263967756202778, 1.0]
+  WindowedResolution:
+  - 130263763553937941
+  - [1024, 768]
+  antiAliasing: [130263968149147922, 0]
+  charClothSimulation: [130262933588609554, 0]
+  charTextureQuality: [130262933588609554, 2]
+  interiorGraphicsQuality: [130263968149147922, 0]
+  interiorShaderQuality: [130263968149147922, 0]
+  loadstationenv2: [130263967754685901, 0]
+  lodQuality: [130263968149147922, 1]
+  postProcessingQuality: [130263968149147922, 0]
+  shaderQuality: [130263968149147922, 1]
+  shadowQuality: [130263968149147922, 0]
+  textureQuality: [130263968149147922, 2]
+generic:
+  eulaCRC: [130263967788208155, -2089643990]
+  showintro2: [130263968097517893, 0]
+ui:
+  http://client.eveonline.com:80/track/advertLoad/448Ad: [130246517351248435, 1]
+  http://client.eveonline.com:80/track/advertLoad/449Ad: [130246517351248435, 1]
+  http://client.eveonline.com:80/track/advertLoad/450Ad: [130246517351248435, 1]
+  http://client.eveonline.com:80/track/advertLoad/451Ad: [130246517351248435, 1]
+  http://client.eveonline.com:80/track/advertLoad/452Ad: [130242015919162526, 1]
+  http://client.eveonline.com:80/track/advertLoad/453Ad: [130246517351248435, 1]
+  http://client.eveonline.com:80/track/advertLoad/458Ad: [130256929010217491, 1]
+  http://client.eveonline.com:80/track/advertLoad/459Ad: [130256929010217491, 1]
+  http://client.eveonline.com:80/track/advertLoad/460Ad: [130258817874333628, 1]
+  http://client.eveonline.com:80/track/advertLoad/461Ad: [130257982207917802, 1]
+  http://client.eveonline.com:80/track/advertLoad/462Ad: [130257982207917802, 1]
+  http://client.eveonline.com:80/track/advertLoad/464Ad: [130259651605252136, 1]
+  http://client.eveonline.com:80/track/advertLoad/465Ad: [130263968179620030, 1]
+  username: [130263968146193847, Ikr0n0sI]
+  usernames:
+  - 130263968128373332
+  - [gunslinger2, ceptor1983, onix83, Ikr0n0sI, kr0n, misle]
