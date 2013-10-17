@@ -15,6 +15,8 @@ Func Dock()
    Dim $st[2] = [785,188] ;;; Координаты первой станции
    Dim $Dock[2] = [837,81] ;;; Координаты кнопки док
    
+   Send("d")
+   Sleep(5000)
    MouseClick("left", $st[0], $st[1]+17*3)
    Sleep(1000)
    MouseClick("left", $Dock[0], $Dock[1])
