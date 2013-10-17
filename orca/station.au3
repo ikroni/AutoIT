@@ -4,7 +4,7 @@ Func Check_st()
    $z = PixelSearch($undb[0],$undb[1],$undb[2],$undb[3],$undb[4],5)
    If IsArray($z) Then
 	  $state = 1
-	  MsgBox(0,"1","Docked")
+	  ;MsgBox(0,"1","Docked")
    EndIf
   
    Return $state

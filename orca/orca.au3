@@ -35,10 +35,12 @@ $res_st = Check_st()
 		 WEnd
 		 if $res == 1 Then
 			Undep()
+			Exit 0
 		 EndIf
 	  EndIf
    Else
 	  Undep()
+	  Exit 0
    EndIf
    Sleep(5000)
 WEnd

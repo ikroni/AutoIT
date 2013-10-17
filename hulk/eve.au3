@@ -38,7 +38,7 @@ While 1
 	  ;;;sleep(3000)
 	  $belt_state = check_avalible_target()
 	  ;MsgBox(0,"q", $belt_state[0] & " " & $belt_state[1] & " " & $belt_state[2] & " " & $belt_state[3] & " " &	 $belt_state[4])
-	  If $belt_state[0] == 1 And $belt_state[1] == 1 And $belt_state[2] == 1 Then
+	  If $belt_state[0] == 1 Then
 		 $res = lock_1($belt_state)
 	  Else
 		 $res = 0

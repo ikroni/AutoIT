@@ -116,43 +116,6 @@ Func lock($check_lock)
    EndIf
    sleep(500)
 		 MouseMove(0, 0)
-   ;Switch $check_lock
-	;  Case 0, 10, 100, 110, 1110, 11110
-	;	 Send("{CTRLDOWN}")
-;		 MouseClick("left", $target_x +5, $target_y + 5);
-		 ;Send("{CTRLUP}")
-		 ;MouseMove(0, 0)
-	  ;Case 1, 100, 101, 1101, 11101
-		 ;Send("{CTRLDOWN}")
-		 ;$y = $target_y+$dist_y+5
-		 ;MsgBox(0, "EVE", $y)
-		 ;MouseClick("left", $target_x +5, $y)
-		 ;Send("{CTRLUP}")
-		 ;MouseMove(0, 0)
-	  ;Case 11, 1011, 11011
-		; Send("{CTRLDOWN}")
-		 ;$y = $target_y+5+$dist_y*2
-		 ;MsgBox(0, "EVE", $y)
-		 ;MouseClick("left", $target_x+5, $y)
-		 ;Send("{CTRLUP}")
-		 ;MouseMove(0, 0)
-	  ;Case 111, 10111
-		 ;;if $belt_state == 1111 Then
-		;	Send("{CTRLDOWN}")
-		;	$y = $target_y+5+$dist_y*3
-		;	MouseClick("left", $target_x+5, $y)
-		;	Send("{CTRLUP}")
-		;	MouseMove(0, 0)
-		 ;;EndIf
-	;Case 1111
-	;	 ;;if $belt_state == 11111 Then
-	;		Send("{CTRLDOWN}")
-	;		$y = $target_y+5+$dist_y*4
-	;		MouseClick("left", $target_x+5, $y)
-	;		Send("{CTRLUP}")
-	;		MouseMove(0, 0)
-		 ;;EndIf
-   ;EndSwitch
 EndFunc
 
 Func lock_1($belt_state)
