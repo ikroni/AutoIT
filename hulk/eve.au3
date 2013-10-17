@@ -28,6 +28,8 @@ EndFunc
 
 While 1
 	WinActivate("EVE")
+	MouseMove(0,0)
+	Sleep(500)
 	$hangar_state = Check_hangar()
 	If $hangar_state == 0 Then
 	   hangar($hangar_state)
@@ -35,11 +37,13 @@ While 1
 	   cargo()
 	  ;;;sleep(3000)
 	  $belt_state = check_avalible_target()
-	  If $belt_state <> 0 Then
+	  ;MsgBox(0,"q", $belt_state[0] & " " & $belt_state[1] & " " & $belt_state[2] & " " & $belt_state[3] & " " &	 $belt_state[4])
+	  If $belt_state[0] == 1 And $belt_state[1] == 1 And $belt_state[2] == 1 Then
 		 $res = lock_1($belt_state)
 	  Else
 		 $res = 0
 	  EndIf
+	  ;MsgBox(0,"q", $res[0] & " " & $res[1] & " " & $res[2] & " " & $res[3] & " " &	 $res[4])
 	  if $res == 111 Then
 		 laser() ;;;Pfge
 		 ;Drone($res)

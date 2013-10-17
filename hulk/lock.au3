@@ -2,22 +2,32 @@
 Func check_avalible_target()
    ;;Переменные
    $color1 = 0xcacbcb
-   $color2 = 0xbdbebe
-   $color3 = 0xc8c8c8
+   $color2 = 0xd5d5d5
+   $color3 = 0xc7c7c7
+   $color4 = 0xc0c0c0c
+   $color5 = 0x2d2d2d
    $x = 737
-   $y = 163
-   $dist_x = 154
-   $dist_y = 17
+   $y = 170
+   $dist_x = 280
+   $dist_y = 19
    
-   $state = 0
+   Dim $state[5] = [0,0,0,0,0]
    ;; Проверка
    For $i = 0 to 4
 	  $z1 = PixelSearch($x, $y+$i*$dist_y, $x+$dist_x, $y+$i*$dist_y+$dist_y, $color1)
+	  ;MsgBox(0,'1', $z1[0])
 	  $z2 = PixelSearch($x, $y+$i*$dist_y, $x+$dist_x, $y+$i*$dist_y+$dist_y, $color2)
+	  ;MsgBox(0,'1', $z2[0])
 	  $z3 = PixelSearch($x, $y+$i*$dist_y, $x+$dist_x, $y+$i*$dist_y+$dist_y, $color3)
-	  If IsArray($z1) or IsArray($z2) or IsArray($z3) Then
-		 $state = $state + 10 ^ $i
+	  ;MsgBox(0,'1', $z3[0])
+	  $z4 = PixelSearch($x, $y+$i*$dist_y, $x+$dist_x, $y+$i*$dist_y+$dist_y, $color4)
+	  ;MsgBox(0,'1', $z4[0])
+	  $z5 = PixelSearch($x, $y+$i*$dist_y, $x+$dist_x, $y+$i*$dist_y+$dist_y, $color5)
+	  ;MsgBox(0,'1', $z5[0])
+	  If IsArray($z1) or IsArray($z2) or IsArray($z3) or IsArray($z4) or IsArray($z5) Then
+		 $state[$i] = 1
 	  EndIf
+	  ;MsgBox(0, "1", $state[$i])
    Next
    Return $state
 EndFunc
@@ -38,7 +48,7 @@ Func check_lock()
    $tar_col5 = 0xC8C8C8
    $tar_col6 = 0xC5C5C5
    $disp = 0
-   $check_res = 0
+   Dim $check_res[5] = [0,0,0,0,0]
    ;;;Ищем цвета на месте первого таргета
    For $i = 0 to 4
 	  $z1 = PixelSearch($target_x+2, $target_y  + $i * $dist_y+2, $target_x + $dist_x-2, $target_y + $dist_y *($i+1) -2, $tar_col1)
@@ -49,7 +59,7 @@ Func check_lock()
 	  $z6 = PixelSearch($target_x+2, $target_y  + $i * $dist_y+2, $target_x + $dist_x-2, $target_y + $dist_y *($i+1)-2, $tar_col6)
 	  
 	  if IsArray( $z1) Or IsArray($z2) or IsArray($z3) or IsArray($z4) or IsArray($z5) or IsArray($z6) Then ;;Or IsArray($z2) 
-		 $check_res = $check_res + 10^$i
+		 $check_res[$i] = 1
 	  Else
 		 ;MsgBox(0, "EVE", "No One targeted")
 	  EndIf
@@ -68,50 +78,89 @@ Func lock($check_lock)
    $dist_x = 20
    $belt_state = check_avalible_target()
    ;;Лок
-   ;MsgBox(0, "EVE", $check_lock)
-   Switch $check_lock
-	  Case 0, 10, 100, 110, 1110, 11110
-		 Send("{CTRLDOWN}")
-		 MouseClick("left", $target_x +5, $target_y + 5)
-		 Send("{CTRLUP}")
+   ;MsgBox(0, "EVE", $belt_state)
+   If $check_lock[0] == 0 Then
+	  $y = $target_y+$dist_y/2
+	  Sleep(500)
+	  Send("{CTRLDOWN}")
+	  MouseClick("left", $target_x +5, $y)
+	  Send("{CTRLUP}")
+   EndIf
+   If $check_lock[1] == 0 Then
+	  sleep(500)
+	  $y = $target_y+$dist_y+5
+	  Send("{CTRLDOWN}")
+	  MouseClick("left", $target_x +5, $y)
+	  Send("{CTRLUP}")
+   EndIf
+   If $check_lock[2] == 0 Then
+	  sleep(500)
+	  $y = $target_y+5+$dist_y*2
+	  Send("{CTRLDOWN}")
+	  MouseClick("left", $target_x +5, $y)
+	  Send("{CTRLUP}")
+   EndIf
+   If $check_lock[3] == 0 Then
+	  sleep(500)
+	  $y = $target_y+5+$dist_y*3
+	  Send("{CTRLDOWN}")
+	  MouseClick("left", $target_x +5, $y)
+	  Send("{CTRLUP}")
+   EndIf
+   If $check_lock[4] == 0 Then
+	  sleep(500)
+	  $y = $target_y+5+$dist_y*4
+	  Send("{CTRLDOWN}")
+	  MouseClick("left", $target_x +5, $y)
+	  Send("{CTRLUP}")
+   EndIf
+   sleep(500)
 		 MouseMove(0, 0)
-	  Case 1, 100, 101, 1101, 11101
-		 Send("{CTRLDOWN}")
-		 $y = $target_y+$dist_y+5
+   ;Switch $check_lock
+	;  Case 0, 10, 100, 110, 1110, 11110
+	;	 Send("{CTRLDOWN}")
+;		 MouseClick("left", $target_x +5, $target_y + 5);
+		 ;Send("{CTRLUP}")
+		 ;MouseMove(0, 0)
+	  ;Case 1, 100, 101, 1101, 11101
+		 ;Send("{CTRLDOWN}")
+		 ;$y = $target_y+$dist_y+5
 		 ;MsgBox(0, "EVE", $y)
-		 MouseClick("left", $target_x +5, $y)
-		 Send("{CTRLUP}")
-		 MouseMove(0, 0)
-	  Case 11, 1011, 11011
-		 Send("{CTRLDOWN}")
-		 $y = $target_y+5+$dist_y*2
+		 ;MouseClick("left", $target_x +5, $y)
+		 ;Send("{CTRLUP}")
+		 ;MouseMove(0, 0)
+	  ;Case 11, 1011, 11011
+		; Send("{CTRLDOWN}")
+		 ;$y = $target_y+5+$dist_y*2
 		 ;MsgBox(0, "EVE", $y)
-		 MouseClick("left", $target_x+5, $y)
-		 Send("{CTRLUP}")
-		 MouseMove(0, 0)
-	  Case 111, 10111
+		 ;MouseClick("left", $target_x+5, $y)
+		 ;Send("{CTRLUP}")
+		 ;MouseMove(0, 0)
+	  ;Case 111, 10111
 		 ;;if $belt_state == 1111 Then
-			Send("{CTRLDOWN}")
-			$y = $target_y+5+$dist_y*3
-			MouseClick("left", $target_x+5, $y)
-			Send("{CTRLUP}")
-			MouseMove(0, 0)
+		;	Send("{CTRLDOWN}")
+		;	$y = $target_y+5+$dist_y*3
+		;	MouseClick("left", $target_x+5, $y)
+		;	Send("{CTRLUP}")
+		;	MouseMove(0, 0)
 		 ;;EndIf
-	Case 1111
-		 ;;if $belt_state == 11111 Then
-			Send("{CTRLDOWN}")
-			$y = $target_y+5+$dist_y*4
-			MouseClick("left", $target_x+5, $y)
-			Send("{CTRLUP}")
-			MouseMove(0, 0)
+	;Case 1111
+	;	 ;;if $belt_state == 11111 Then
+	;		Send("{CTRLDOWN}")
+	;		$y = $target_y+5+$dist_y*4
+	;		MouseClick("left", $target_x+5, $y)
+	;		Send("{CTRLUP}")
+	;		MouseMove(0, 0)
 		 ;;EndIf
-   EndSwitch
+   ;EndSwitch
 EndFunc
 
 Func lock_1($belt_state)
-   $res = 0
-   while $res <> $belt_state
+   Dim $res[5] = [0,0,0,0,0]
+   while $res[0] <> $belt_state[0] And $res[1] <> $belt_state[1] And $res[2] <> $belt_state[2] And $res[3] <> $belt_state[3] And $res[4] <> $belt_state[4]
 	  $res = check_lock()
+	  ;MsgBox(0,"l", $res[0] & " " & $res[1] & " " & $res[2] & " " & $res[3] & " " &	 $res[4])
+	  ;MsgBox(0,"a", $belt_state[0] & " " & $belt_state[1] & " " & $belt_state[2] & " " & $belt_state[3] & " " &	 $belt_state[4])
 	  lock($res)
 	  sleep(3000)
    WEnd
