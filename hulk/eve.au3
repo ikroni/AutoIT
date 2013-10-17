@@ -42,7 +42,7 @@ While 1
 	  EndIf
 	  if $res == 111 Then
 		 laser() ;;;Pfge
-		 Drone($res)
+		 ;Drone($res)
 		 Check_dubl()
 	  EndIf
 

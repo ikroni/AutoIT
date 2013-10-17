@@ -66,6 +66,7 @@ Func lock($check_lock)
    $target_y = 171
    $dist_y = 19
    $dist_x = 20
+   $belt_state = check_avalible_target()
    ;;Ëîê
    ;MsgBox(0, "EVE", $check_lock)
    Switch $check_lock
@@ -73,34 +74,37 @@ Func lock($check_lock)
 		 Send("{CTRLDOWN}")
 		 MouseClick("left", $target_x +5, $target_y + 5)
 		 Send("{CTRLUP}")
-		 MouseMove($target_x - 100, $target_y + 100)
+		 MouseMove(0, 0)
 	  Case 1, 100, 101, 1101, 11101
 		 Send("{CTRLDOWN}")
 		 $y = $target_y+$dist_y+5
 		 ;MsgBox(0, "EVE", $y)
 		 MouseClick("left", $target_x +5, $y)
 		 Send("{CTRLUP}")
-		 MouseMove($target_x - 100, $target_y + 100)
+		 MouseMove(0, 0)
 	  Case 11, 1011, 11011
 		 Send("{CTRLDOWN}")
 		 $y = $target_y+5+$dist_y*2
 		 ;MsgBox(0, "EVE", $y)
 		 MouseClick("left", $target_x+5, $y)
 		 Send("{CTRLUP}")
-		 MouseMove($target_x - 100, $target_y + 100)
-	Case 111, 10111
-		Send("{CTRLDOWN}")
-		 $y = $target_y+5+$dist_y*3
-		 MouseClick("left", $target_x+5, $y)
-		 Send("{CTRLUP}")
-		 MouseMove($target_x - 100, $target_y + 100)
+		 MouseMove(0, 0)
+	  Case 111, 10111
+		 ;;if $belt_state == 1111 Then
+			Send("{CTRLDOWN}")
+			$y = $target_y+5+$dist_y*3
+			MouseClick("left", $target_x+5, $y)
+			Send("{CTRLUP}")
+			MouseMove(0, 0)
+		 ;;EndIf
 	Case 1111
-		Send("{CTRLDOWN}")
-		 $y = $target_y+5+$dist_y*4
-		 MouseClick("left", $target_x+5, $y)
-		 Send("{CTRLUP}")
-		 MouseMove($target_x - 100, $target_y + 100)
-
+		 ;;if $belt_state == 11111 Then
+			Send("{CTRLDOWN}")
+			$y = $target_y+5+$dist_y*4
+			MouseClick("left", $target_x+5, $y)
+			Send("{CTRLUP}")
+			MouseMove(0, 0)
+		 ;;EndIf
    EndSwitch
 EndFunc
 
