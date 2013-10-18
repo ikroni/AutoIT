@@ -50,12 +50,12 @@ Func Check_dubl()
 	Dim $c = 0xffffff
 	Dim $area[7] = [422, 453, 530, 560, 641, 673, 143]
 	$i = 0
-		$z1 = PixelSearch($area[0]-5,$area[6]-5,$area[0]+5,$area[6]+5,$c)
-		$z2 = PixelSearch($area[1]-5,$area[6]-5,$area[1]+5,$area[6]+5,$c)
-		$z3 = PixelSearch($area[2]-5,$area[6]-5,$area[2]+5,$area[6]+5,$c)
-		$z4 = PixelSearch($area[3]-5,$area[6]-5,$area[3]+5,$area[6]+5,$c)
-		$z5 = PixelSearch($area[4]-5,$area[6]-5,$area[4]+5,$area[6]+5,$c)
-		$z6 = PixelSearch($area[5]-5,$area[6]-5,$area[5]+5,$area[6]+5,$c)
+		$z1 = PixelSearch($area[0]-5,$area[6]-20,$area[0]+5,$area[6]+20,$c)
+		$z2 = PixelSearch($area[1]-5,$area[6]-20,$area[1]+5,$area[6]+20,$c)
+		$z3 = PixelSearch($area[2]-5,$area[6]-20,$area[2]+5,$area[6]+20,$c)
+		$z4 = PixelSearch($area[3]-5,$area[6]-20,$area[3]+5,$area[6]+20,$c)
+		$z5 = PixelSearch($area[4]-5,$area[6]-20,$area[4]+5,$area[6]+20,$c)
+		$z6 = PixelSearch($area[5]-5,$area[6]-20,$area[5]+5,$area[6]+20,$c)
 		If IsArray($z1) And IsArray($z2) Then
 			MouseClick("left", $z2[0], $z2[1])
 			Sleep(1000)
