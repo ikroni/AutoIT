@@ -47,7 +47,10 @@ While 1
 	  if $res == 111 Then
 		 laser() ;;;Pfge
 		 ;Drone($res)
-		 Check_dubl()
+		 If $belt_state[2] == 1 Then
+			Check_dubl()
+		 EndIf
+		 
 	  EndIf
 
    EndIf
