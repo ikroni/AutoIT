@@ -1,6 +1,10 @@
 Func check_cargo()
    ;;;Пиксель и цвета
+<<<<<<< HEAD
    $x = 170
+=======
+   $x = 168
+>>>>>>> 31738a0513cccc89e37032667ccb7cade4fecc1a
    $y = 263
    $dist = 5
    $color_1 = 0x000000
@@ -42,12 +46,12 @@ Func clear_cargo()
 	  $z = PixelSearch($1[0],$1[1],$1[2],$1[3],$c)
    Wend
    MouseMove(0,0)
-   
+
 EndFunc
 
 func cargo()
    $res = 0
-   
+
    $res = check_cargo()
    ;MsgBox(0,"1", $res)
    Switch $res
