@@ -1,8 +1,9 @@
 Func Check_st()
-   Dim $undb[5] = [904,170,970,200,0xe6b801]
+   Dim $undb[6] = [904,170,970,200,0xe6b801,0xe6b802]
    $state = 0
-   $z = PixelSearch($undb[0],$undb[1],$undb[2],$undb[3],$undb[4],5)
-   If IsArray($z) Then
+   $z1 = PixelSearch($undb[0],$undb[1],$undb[2],$undb[3],$undb[4],5)
+   $z2 = PixelSearch($undb[0],$undb[1],$undb[2],$undb[3],$undb[5],5)
+   If IsArray($z1) or IsArray($z2) Then
 	  $state = 1
 	  ;MsgBox(0,"1","Docked")
    EndIf
@@ -20,6 +21,7 @@ Func Dock()
    MouseClick("left", $st[0], $st[1]+17*3)
    Sleep(1000)
    MouseClick("left", $Dock[0], $Dock[1])
+   Sleep(15000)
 EndFunc
 
 Func Undep()
@@ -83,5 +85,20 @@ Func Undep()
 	  $z = PixelSearch($3[0],$3[1],$3[2],$3[3],$c)
    WEnd
    
+EndFunc
+
+Func Undock()
+   Dim $undb[5] = [904,170,970,200,0xe6b801]
+   
+   ;;$InStation = Check_st()
+   ;$ClearCargo = Check_clear_cargo()
+   ;If $InStation == 1 And $ClearCargo == 0 Then
+	  $z = PixelSearch($undb[0],$undb[1],$undb[2],$undb[3],$undb[4],5)
+	  MouseMove (900, 170)
+	  Sleep(1000)
+	  MouseClick("left",$z[0], $z[1])
+	  Sleep(15000)
+   ;EndIf
+
 EndFunc
 

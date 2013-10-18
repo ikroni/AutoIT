@@ -11,4 +11,6 @@ Func Menu($a)
 		 MouseClick("left", $ow[4], $ow[5])
 		 Sleep(500)
    EndSwitch
+   MouseMove(0,0)
+   Return $a
 EndFunc

@@ -66,7 +66,7 @@ EndFunc
 Func Move_ore()
 	$c = 0x010101
    Dim $1[4] = [370,67, 750,160]
-   Dim $ore[2] = [366,306]
+   Dim $ore[2] = [400,288]
    WinActivate("EVE")
    $res = Check_rests()
 	if $res == 1 Then
@@ -101,7 +101,7 @@ EndFunc
 Func Move_cargo()
 	$c = 0x010101
    Dim $1[4] = [370,67, 750,160]
-   Dim $ore[2] = [395,483]
+   Dim $ore[2] = [446,479]
    WinActivate("EVE")    
 	$res = Check_rests()
 	if $res == 1 Then
@@ -131,4 +131,24 @@ Func Move_cargo()
    EndIf
 
    MouseMove(0,0)
+EndFunc
+
+Func Check_clear_cargo()
+   Dim $cargo[6] = [329,47,329,250,369,421]
+   $color_1 = 0x000000
+   ;$color_2 = 0x010101
+   ;$color_3 = 0x020202
+   ;$color_4 = 0x020101
+   ;$color_5 = 0x020201
+   $state = 0
+   $z1 = PixelSearch($cargo[0], $cargo[1], $cargo[0]+5, $cargo[1]+5, $color_1)
+   $z2 = PixelSearch($cargo[2], $cargo[3], $cargo[2]+5, $cargo[3]+5, $color_1)
+   $z3 = PixelSearch($cargo[4], $cargo[5], $cargo[4]+5, $cargo[5]+5, $color_1)
+   ;$z4 = PixelSearch($cargo[0], $cargo[1], $cargo[0]+$cargo[2], $cargo[1]+$cargo[2], $color_4)
+   ;$z5 = PixelSearch($cargo[0], $cargo[1], $cargo[0]+$cargo[2], $cargo[1]+$cargo[2], $color_5)
+   
+   if  IsArray($z1) Or IsArray($z2) Or IsArray($z3) Then
+	  $state = 1
+   EndIf
+   Return $state
 EndFunc
