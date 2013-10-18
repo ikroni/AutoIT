@@ -1,10 +1,6 @@
 Func check_cargo()
    ;;;Пиксель и цвета
-<<<<<<< HEAD
-   $x = 170
-=======
-   $x = 168
->>>>>>> 31738a0513cccc89e37032667ccb7cade4fecc1a
+   $x = 155
    $y = 263
    $dist = 5
    $color_1 = 0x000000
