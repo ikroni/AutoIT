@@ -97,7 +97,13 @@ Func Undock()
 	  MouseMove (900, 170)
 	  Sleep(1000)
 	  MouseClick("left",$z[0], $z[1])
-	  Sleep(15000)
+	  Sleep(20000)
+	  Send("{CTRLDOWN}")
+	  sleep(100)
+	  Send("{SPACE}")
+	  sleep(100)
+	  Send("{CTRLUP}")
+	  Sleep(10000)
    ;EndIf
 
 EndFunc

@@ -9,71 +9,7 @@ WinActivate("EVE")
 #include "fleet.au3"
 #include "space.au3"
 Global $a = 0
-;while 1
-;   WinActivate("EVE")
-   ;Menu(1)
-   ;$res_cargo = Check_cargo()
-   ;$res_ore = Check_ore()
-   ;$res_hangar = Check_hangar()
-   
-;MsgBox(0,"1", $res_cargo & " " & $res_ore & " " &  $res_hangar)
- ;  $res_st = Check_st()
-  ; if $res_st <> 1 Then
-	;  If $res_hangar == 1 Then
-	;	 If $res_ore == 0 Then
-	;		Move_ore()
-	;	 ElseIf $res_cargo == 0 Then
-	;		Move_cargo()
-	;	 EndIf
-	 ; EndIf
-	  ;If $res_hangar == 1 And $res_ore == 1 And $res_cargo == 1 Then
-		; $res = Check_st()
-		 ;if $res == 0 Then
-			;Menu(2)
-			;Dock()
-			;Menu(1)
-		 ;EndIf
-		 ;Sleep(5000)
-		 ;$res = Check_st()
-		 ;While $res <> 1
-		;	Sleep(5000)
-	;		$res = Check_st()
-;		 WEnd
-		 ;if $res == 1 Then
-			;Undep()
-			;Undock()
-			;$fleet = FleetShipNear()
-			;if $fleet == 0 Then
-			;   $warp = InWarp()
-			;   If $warp == 0 Then
-		;		  Warp()
-	;		   EndIf
-	;		   Sleep(10000)
-	;		EndIf
-			
-			;Exit 0
-		 ;EndIf
-;	  EndIf
-;   Else
-	  ;MsgBox(0, "1","В доке")
-	  ;$cargo = Check_clear_cargo()
-	  ;If $cargo == 0 Then
-	;	 Undep()
-	;  EndIf
-	;  Undock()
-	;  $fleet = FleetShipNear()
-	;  if $fleet == 0 Then
-;		 $warp = InWarp();
-		 ;If $warp == 0 Then
-		;	Warp()
-		; EndIf
-		; Sleep(10000)
-	  ;EndIf
-	  ;Undep()
-	  ;Exit 0
-  ; EndIf
-   ;Sleep(5000)
-;WEnd
+
 While 1
    Sleep(100)
 WEnd
