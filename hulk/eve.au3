@@ -2,30 +2,22 @@
 Global $Corp_flag = 0x4B0000 ;;;Цвет на флаге корпы
 Global $undock = 0xE6B800 ;;;Цвет галочек андока
 Global $disp = 5 ;;; Вводим разброс по возможным цветам
-#include <ButtonConstants.au3>
-#include <GUIConstantsEx.au3>
-#include <StaticConstants.au3>
-#include <WindowsConstants.au3>
 Opt("CaretCoordMode", 2)
 Opt("MouseCoordMode", 2)
 Opt("PixelCoordMode", 2)
-HotKeySet("{ESC}","Terminate")
-
-#include "start.au3" ;;;Функция старта евы
-#include "login.au3" ;;;функция логина
-#include "undock.au3" ;;;функция андока
-#include "laser.au3"
-#include "lock.au3"
-#include "cargo.au3"
-#include "pause_mine.au3"
-#include "drone.au3"
-#include "hangar.au3"
-#include "station.au3"
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;программа;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-Func Terminate()
-   Exit 0
-EndFunc
-
+#include "variable.au3" ;;;їїїїї їїїїїїїїїї їїїїїїїїїї
+#include "mgmt.au3" ;;;їїїїїїї їїїїїїїїїї їїїїї
+#include "start.au3" ;;;їїїїїїї їїїїїї їїї
+#include "login.au3" ;;;їїїїїїї їїїїїї ї їїїї
+#include "undock.au3" ;;;їїїїїїї їїїїїї
+#include "laser.au3" ;;;їїїїїїї їїїїїї ї їїїїїїїї
+#include "lock.au3" ;;;їїїїїїї їїїї їїїїї
+#include "cargo.au3" ;;;;їїїїїїї їїїїїїїїї їїїїї
+#include "pause_mine.au3" ;;;
+#include "drone.au3" ;;;їїїїїїї їїїїїї ї їїїїїїї
+#include "hangar.au3" ;;;їїїїїїї їїїїїї ї їїїїїїї їїїї
+#include "station.au3" ;;;їїїїїїї їїїїїї її їїїїїїїї
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;їїїїїїїїї;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 While 1
 	WinActivate("EVE")
 	MouseMove(0,0)
@@ -35,15 +27,12 @@ While 1
 	   hangar($hangar_state)
 	Else
 	   cargo()
-	  ;;;sleep(3000)
 	  $belt_state = check_avalible_target()
-	  ;MsgBox(0,"q", $belt_state[0] & " " & $belt_state[1] & " " & $belt_state[2] & " " & $belt_state[3] & " " &	 $belt_state[4])
 	  If $belt_state[0] == 1 Then
 		 $res = lock_1($belt_state)
 	  Else
 		 $res = 0
 	  EndIf
-	  ;MsgBox(0,"q", $res[0] & " " & $res[1] & " " & $res[2] & " " & $res[3] & " " &	 $res[4])
 	  if $res == 111 Then
 		 laser() ;;;Pfge
 		 ;Drone($res)

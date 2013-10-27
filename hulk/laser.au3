@@ -1,20 +1,13 @@
 Func chlasst()
-   ;$dist_x = 50
-   ;$dist_y = 50
    $disp = 5
    $x1 = 612
    $y1 = 607
-   ;$x2 = 770
-   ;$y2 = 860
    $ret = 0
    $z110 = 0
    $z210 = 0
    $z310 = 0
-   $z120 = 0
-   $z220 = 0
-   $z320 = 0
    $i = 0
-   While $i < 50
+   While $i < 20 ;;;¿¿¿¿¿¿¿¿¿ ¿¿¿¿¿¿¿¿ ¿¿¿ ¿¿¿¿¿¿¿¿ 50, ¿¿ ¿¿¿¿¿¿¿¿¿ ¿¿¿¿¿¿¿¿¿ ¿¿¿¿¿¿¿¿ ¿¿ 20
 	  $z11 = PixelGetColor( $x1, $y1)
 	  $z21 = PixelGetColor( $x1+50, $y1+3)
 	  $z31 = PixelGetColor( $x1+100-5, $y1)
@@ -30,7 +23,6 @@ Func chlasst()
 			$ret = $ret + 10
 		 EndIf
 		 If ($z310 <> $z31 ) and ($ret == 0 Or $ret == 10 Or $ret == 1 or $ret == 11) Then ;;;;Or $z320 <> $z32
-			;MsgBox(0,"3", $z310 & "=" & $z31 & " & " $z320 <> $z32)
 			$ret = $ret + 100
 		 EndIf
 	  EndIf
@@ -133,10 +125,12 @@ EndFunc
 
 Func laser()
    ;MsgBox(0,"1","1")
+   $t = 0
    $res = 0
-   While $res <> 111
+   While $res <> 111 or $t < 5
 	  $res = chlasst()
 	  laser_act($res)
 	  sleep(1000)
+          $t++
    WEnd
 EndFunc

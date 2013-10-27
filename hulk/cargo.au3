@@ -25,12 +25,17 @@ Func check_cargo()
 EndFunc
 
 Func clear_cargo()
+   Dim $stack[4] = [172,322,30,55]
    $c = 0x010101
    Dim $1[4] = [95,280, 366,397]
    Dim $ore[2] = [213,103]
    ;MsgBox(0,"2","2")
    WinActivate("EVE")
-    $z = PixelSearch($1[0],$1[1],$1[2],$1[3],$c)
+   MouseClick("right",$stack[0],$stack[1])
+   Sleep(500)
+   MouseClick("left",$stack[0]+$stack[2],$stack[1]+$stack[3])
+   Sleep(500)
+   $z = PixelSearch($1[0],$1[1],$1[2],$1[3],$c)
    While IsArray($z)
 	   MouseMove($z[0], $z[1])
 	  MouseDown("left")
