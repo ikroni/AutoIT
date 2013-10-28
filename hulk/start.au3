@@ -1,7 +1,7 @@
 ;;; Запуск EVE
-Func start()
+Func start_eve()
    If Not WinExists("EVE") Then
-	  Run("D:\gms\EVE\bin\exefile.exe")   
+	  Run("D:\gms\EVE\bin\exefile.exe")
 	  ;MsgBox( 0, "EVE", "EVE STARTED SUCCESSFUL")
 	  WinWaitActive("EVE")
 	  Sleep(1000)
