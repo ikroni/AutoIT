@@ -19,28 +19,34 @@ Opt("PixelCoordMode", 2)
 #include "station.au3" ;;;¿¿¿¿¿¿¿ ¿¿¿¿¿¿ ¿¿ ¿¿¿¿¿¿¿¿
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;¿¿¿¿¿¿¿¿¿;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 While 1
-	WinActivate("EVE")
-	MouseMove(0,0)
-	Sleep(500)
-	$hangar_state = Check_hangar()
-	If $hangar_state == 0 Then
-	   hangar($hangar_state)
-	Else
-	   cargo()
-	  $belt_state = check_avalible_target()
-	  If $belt_state[0] == 1 Then
-		 $res = lock_1($belt_state)
-	  Else
-		 $res = 0
-	  EndIf
-	  if $res == 111 Then
-		 laser() ;;;Pfge
-		 ;Drone($res)
-		 If $belt_state[2] == 1 Then
-			Check_dubl()
-		 EndIf
-		 
-	  EndIf
-
-   EndIf
+	sleep(100)
 WEnd
+
+Func Main()
+	While 1
+		WinActivate("EVE")
+		MouseMove(0,0)
+		Sleep(500)
+		$hangar_state = Check_hangar()
+		If $hangar_state == 0 Then
+			hangar($hangar_state)
+		Else
+			cargo()
+			$belt_state = check_avalible_target()
+			If $belt_state[0] == 1 Then
+				$res = lock_1($belt_state)
+			Else
+				$res = 0
+			EndIf
+			if $res == 111 Then
+				laser() ;;;Pfge
+		 ;Drone($res)
+				If $belt_state[2] == 1 Then
+					Check_dubl()
+				EndIf
+
+			EndIf
+
+		EndIf
+	WEnd
+EndFunc

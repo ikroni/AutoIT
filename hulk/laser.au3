@@ -131,6 +131,6 @@ Func laser()
 	  $res = chlasst()
 	  laser_act($res)
 	  sleep(1000)
-          $t++
+          $t = $t + 1
    WEnd
 EndFunc
