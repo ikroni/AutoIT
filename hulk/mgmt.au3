@@ -15,5 +15,6 @@ Func Pause()
   $pause = not $pause
   while $pause
     sleep(100)
+    ToolTip('Script is Paused',0,0)
   wend
 EndFunc
