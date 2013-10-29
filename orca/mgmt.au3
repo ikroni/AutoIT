@@ -8,6 +8,7 @@ Func Terminate()
 EndFunc
 
 Func Start()
+   ToolTip('Script is started',0,0)
    Main()
 EndFunc
 
@@ -16,5 +17,6 @@ Func Pause()
   while $pause
     sleep(100)
     ToolTip('Script is paused',0,0)
-  wend
+ wend
+ ToolTip('Script is started',0,0)
 EndFunc
