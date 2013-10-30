@@ -7,7 +7,7 @@ Func Check_link()
    $z210 = 0
    $i = 0
    While $i < 20 ;;;¿¿¿¿¿¿¿¿¿ ¿¿¿¿¿¿¿¿ ¿¿¿ ¿¿¿¿¿¿¿¿ 50, ¿¿ ¿¿¿¿¿¿¿¿¿ ¿¿¿¿¿¿¿¿¿ ¿¿¿¿¿¿¿¿ ¿¿ 20
-	  $z11 = PixelGetColor( $x1+50, $y1+3)
+	  $z11 = PixelGetColor( $x1+54, $y1)
 	  $z21 = PixelGetColor( $x1+95, $y1+3)
 	  ;$z31 = PixelGetColor( $x1+100-5, $y1)
 	  If $z110 == 0 Then
