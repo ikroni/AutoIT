@@ -85,9 +85,9 @@ Func Main()
 			   ElseIf $res_cargo == 0 Then
 				  ;;;;Перемещаем в карго
 				  Move_cargo()
-			   EndIf
-			   link()			   
+			   EndIf			   			   
 			EndIf
+			link()
 		 Case 8
 			ToolTip('Бот в космосе, руду пихать некуда',0,0)
 			$a = Menu(2)
