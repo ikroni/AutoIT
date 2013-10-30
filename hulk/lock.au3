@@ -124,7 +124,7 @@ EndFunc
 Func lock_1($belt_state)
    Dim $res[5] = [0,0,0,0,0]
    $i = 0
-   while ($res[0] <> $belt_state[0] And $res[1] <> $belt_state[1] And $res[2] <> $belt_state[2] And $res[3] <> $belt_state[3] And $res[4] <> $belt_state[4]) Or $i < 5
+   while ($res[0] <> $belt_state[0] And $res[1] <> $belt_state[1] And $res[2] <> $belt_state[2] And $res[3] <> $belt_state[3] And $res[4] <> $belt_state[4]) And $i < 5
 	  $res = check_lock()
 	  ;MsgBox(0,"l", $res[0] & " " & $res[1] & " " & $res[2] & " " & $res[3] & " " &	 $res[4])
 	  ;MsgBox(0,"a", $belt_state[0] & " " & $belt_state[1] & " " & $belt_state[2] & " " & $belt_state[3] & " " &	 $belt_state[4])
