@@ -33,10 +33,10 @@ Func Check_link()
 EndFunc
 
 Func link_act($res)
-   if $res == 0 Or $res == 10
+   if $res == 0 Or $res == 10 Then
 	  Send("{F2}")
 	  Sleep(100)
-   ElseIf $res == 0 Or $res == 1
+   ElseIf $res == 0 Or $res == 1 Then
 	  Send("{F3}")
 	  Sleep(100)
    EndIf
