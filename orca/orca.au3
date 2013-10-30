@@ -35,7 +35,7 @@ Func Main()
 			$orca_state = 4
 		 EndIf
 	  ElseIf $res_st == 0 Then
-		 If $inWarp == 1 Then
+		 If $inWarp == 0 Then
 			$orca_state = 6
 		 Else
 			If $res_hangar == 1 And $res_ore == 1 And $res_cargo == 1  Then
