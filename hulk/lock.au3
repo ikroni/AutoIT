@@ -82,14 +82,14 @@ Func lock($check_lock)
    ;$belt_state = check_avalible_target()
    ;;Ëîê
    ;MsgBox(0, "EVE", $belt_state)
-   If $check_lock[0] == 0 Then
+   If $check_lock[4] == 0 Then
 	  $y = $target_y+$dist_y*$kol_tar
 	  Sleep(500)
 	  Send("{CTRLDOWN}")
 	  MouseClick("left", $target_x +5, $y)
 	  Send("{CTRLUP}")
    EndIf
-   If $check_lock[1] == 0 Then
+   If $check_lock[3] == 0 Then
 	  sleep(500)
 	  $y = $target_y+$dist_y*($kol_tar-1)
 	  Send("{CTRLDOWN}")
@@ -103,14 +103,14 @@ Func lock($check_lock)
 	  MouseClick("left", $target_x +5, $y)
 	  Send("{CTRLUP}")
    EndIf
-   If $check_lock[3] == 0 Then
+   If $check_lock[1] == 0 Then
 	  sleep(500)
 	  $y = $target_y+5+$dist_y*($kol_tar-3)+5
 	  Send("{CTRLDOWN}")
 	  MouseClick("left", $target_x +5, $y)
 	  Send("{CTRLUP}")
    EndIf
-   If $check_lock[4] == 0 Then
+   If $check_lock[0] == 0 Then
 	  sleep(500)
 	  $y = $target_y+5+$dist_y*($kol_tar-4)+5
 	  Send("{CTRLDOWN}")
