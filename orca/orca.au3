@@ -8,6 +8,7 @@ WinActivate("EVE")
 #include "station.au3"
 #include "fleet.au3"
 #include "space.au3"
+#include "module.au3"
 Global $a = 0
 Global $oraca_state = 0
 ToolTip("Скрипт запущен, для старта нажмите 1", 0, 0)
@@ -85,6 +86,7 @@ Func Main()
 				  ;;;;Перемещаем в карго
 				  Move_cargo()
 			   EndIf
+			   link()			   
 			EndIf
 		 Case 8
 			ToolTip('Бот в космосе, руду пихать некуда',0,0)
