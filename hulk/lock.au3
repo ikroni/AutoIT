@@ -135,6 +135,6 @@ Func lock_1($belt_state)
 		 $kol_tar = $kol_tar + 1
 	  EndIf
    WEnd
-   ToolTip('kol_tar = $kol_tar', 0, 20)
+   ToolTip("kol_tar = " & $kol_tar, 0, 20)
    Return 111
 EndFunc
