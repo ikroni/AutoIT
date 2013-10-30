@@ -25,7 +25,7 @@ Func Main()
 	  $cargo_clear = Check_clear_cargo()
 	  IF $res_st == 1 Then
 		 If $cargo_clear == 0 Then
-			$oraca_state = 3
+			$orca_state = 3
 		 Else
 			$orca_state = 4
 		 EndIf
