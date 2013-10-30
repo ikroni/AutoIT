@@ -13,5 +13,5 @@ Func Warp()
    MouseClick("right",$fleet[0],$fleet[1])
    Sleep(1000)
    MouseClick("left",$fleet[0]+15,$fleet[1]+10)
-   Sleep(30000)
+   Sleep(60000)
 EndFunc
