@@ -130,11 +130,11 @@ Func laser()
    While $res <> 111 And $t < 5
 	  $res = chlasst()
 	  laser_act($res)
-	  sleep(1000)
+	  sleep(4000)
 	  $t = $t + 1
-	  if $t == 5 Then
+	  if $t == 4 Then
 		 $kol_tar = $kol_tar + 1
-		 sleep(3000)
+		 sleep(1000)
 		 unlock()
 		 ExitLoop
 	  EndIf

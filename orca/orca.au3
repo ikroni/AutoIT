@@ -20,7 +20,7 @@ WEnd
 Func Main()
    MouseMove(0,0)
    Sleep(500)
-   while 1		 
+   while 1
 	  ;;определяем на станции ли мы
 	  $res_st = Check_st()
 	  $cargo_clear = Check_clear_cargo()
@@ -40,7 +40,7 @@ Func Main()
 		 $res_ore = Check_ore()
 		 $res_hangar = Check_hangar()
 		 $inWarp = InWarp()
-		 If $inWarp == 0 Then
+		 If $inWarp == 1 Then
 			$orca_state = 6
 		 Else
 			If $res_hangar == 1 And $res_ore == 1 And $res_cargo == 1  Then
@@ -54,7 +54,7 @@ Func Main()
 			EndIf
 		 EndIf
 	  EndIf
-	  
+
 	  Switch $orca_state
 		 case 0
 			ToolTip("Скрипт запущен, но здесь этой хрени уже быть не должно", 0, 0)
@@ -85,7 +85,7 @@ Func Main()
 			   ElseIf $res_cargo == 0 Then
 				  ;;;;Перемещаем в карго
 				  Move_cargo()
-			   EndIf			   			   
+			   EndIf
 			EndIf
 			link()
 		 Case 8
@@ -93,7 +93,7 @@ Func Main()
 			$a = Menu(2)
 			Dock()
 	  EndSwitch
-		 
+
    WEnd
 EndFunc
 
