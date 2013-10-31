@@ -13,7 +13,7 @@ Func check_avalible_target()
    
    Dim $state[5] = [0,0,0,0,0]
    ;; Проверка
-   For $i = 0 to 4
+   For $i = $kol_tar-4 to $kol_tar
 	  $z1 = PixelSearch($x, $y+$i*$dist_y, $x+$dist_x, $y+$i*$dist_y+$dist_y, $color1)
 	  ;MsgBox(0,'1', $z1[0])
 	  $z2 = PixelSearch($x, $y+$i*$dist_y, $x+$dist_x, $y+$i*$dist_y+$dist_y, $color2)
@@ -84,34 +84,34 @@ Func lock($check_lock)
    ;MsgBox(0, "EVE", $belt_state)
    If $check_lock[4] == 0 Then
 	  $y = $target_y+$dist_y*$kol_tar
-	  Sleep(500)
+	  Sleep(1000)
 	  Send("{CTRLDOWN}")
 	  MouseClick("left", $target_x +5, $y)
 	  Send("{CTRLUP}")
    EndIf
    If $check_lock[3] == 0 Then
-	  sleep(500)
+	  sleep(1000)
 	  $y = $target_y+$dist_y*($kol_tar-1)
 	  Send("{CTRLDOWN}")
 	  MouseClick("left", $target_x +5, $y)
 	  Send("{CTRLUP}")
    EndIf
    If $check_lock[2] == 0 Then
-	  sleep(500)
+	  sleep(1000)
 	  $y = $target_y+5+$dist_y*($kol_tar-2)
 	  Send("{CTRLDOWN}")
 	  MouseClick("left", $target_x +5, $y)
 	  Send("{CTRLUP}")
    EndIf
    If $check_lock[1] == 0 Then
-	  sleep(500)
+	  sleep(1000)
 	  $y = $target_y+5+$dist_y*($kol_tar-3)+5
 	  Send("{CTRLDOWN}")
 	  MouseClick("left", $target_x +5, $y)
 	  Send("{CTRLUP}")
    EndIf
    If $check_lock[0] == 0 Then
-	  sleep(500)
+	  sleep(1000)
 	  $y = $target_y+5+$dist_y*($kol_tar-4)+5
 	  Send("{CTRLDOWN}")
 	  MouseClick("left", $target_x +5, $y)
@@ -135,6 +135,6 @@ Func lock_1($belt_state)
 		 $kol_tar = $kol_tar + 1
 	  EndIf
    WEnd
-   ToolTip("kol_tar = " & $kol_tar, 0, 20)
+   ;;ToolTip("kol_tar = " & $kol_tar, 0, 20)
    Return 111
 EndFunc
