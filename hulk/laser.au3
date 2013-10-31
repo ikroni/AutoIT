@@ -133,7 +133,7 @@ Func laser()
 	  sleep(1000)
 	  $t = $t + 1
 	  if $t == 5 Then
-		 $kor_tar = $kor_tar + 1
+		 $kol_tar = $kol_tar + 1
 		 sleep(3000)
 		 unlock()
 	  EndIf
