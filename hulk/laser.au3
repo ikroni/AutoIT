@@ -127,10 +127,15 @@ Func laser()
    ;MsgBox(0,"1","1")
    $t = 0
    $res = 0
-   While $res <> 111 or $t < 5
+   While $res <> 111 And $t < 5
 	  $res = chlasst()
 	  laser_act($res)
 	  sleep(1000)
-          $t = $t + 1
+	  $t = $t + 1
+	  if $t == 5 Then
+		 $kor_tar = $kor_tar + 1
+		 sleep(3000)
+		 unlock()
+	  EndIf
    WEnd
 EndFunc

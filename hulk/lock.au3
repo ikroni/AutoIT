@@ -138,3 +138,38 @@ Func lock_1($belt_state)
    ;;ToolTip("kol_tar = " & $kol_tar, 0, 20)
    Return 111
 EndFunc
+
+Func unlock()
+   ;;; Область таргетов
+   $target_x = 652
+   $target_y = 51
+   $dist_x = 110
+   $dist_t = 85
+   ;;; Переменные для определения на каком кирпече уже активен лазер
+   $color = 0xffffff
+   $c = 0x511206 ;;drone's color
+   $tar_area_1_x = 629
+   $tar_area_y = 121
+   $tar_area_2_x = 527
+   $tar_area_3_x = 413
+   $dist_tar_x = 50
+   $dist_tar_y = 50
+   $z1 = PixelSearch($tar_area_1_x, $tar_area_y, $tar_area_1_x+$dist_tar_x, $tar_area_y+$dist_tar_y, $color)
+   $z11 = PixelSearch($tar_area_1_x, $tar_area_y, $tar_area_1_x+$dist_tar_x, $tar_area_y+$dist_tar_y, $c)
+   $z2 = PixelSearch($tar_area_2_x, $tar_area_y, $tar_area_2_x+$dist_tar_x, $tar_area_y+$dist_tar_y, $color)
+   $z21 = PixelSearch($tar_area_2_x, $tar_area_y, $tar_area_2_x+$dist_tar_x, $tar_area_y+$dist_tar_y, $c)
+   $z3 = PixelSearch($tar_area_3_x, $tar_area_y, $tar_area_3_x+$dist_tar_x, $tar_area_y+$dist_tar_y, $color)
+   $z31 = PixelSearch($tar_area_3_x, $tar_area_y, $tar_area_3_x+$dist_tar_x, $tar_area_y+$dist_tar_y, $c)
+   Send("{CTRLDOWN}")
+   Send("{SHIFTDOWN}")
+   If NOT IsArray($z1) Then
+	  MouseClick("left", $target_x, $target_y)
+   ElseIf NOT IsArray($z2) Then
+	  MouseClick("left", $target_x - $dist_x, $target_y)
+   ElseIf NOT IsArray($z3) Then
+	  MouseClick("left", $target_x - 2*$dist_x, $target_y)
+   EndIf
+   Send("{CTRLUP}")
+   Send("{SHIFTUP}")
+   MouseMove(0,0)
+EndFunc
