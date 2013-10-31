@@ -136,6 +136,7 @@ Func laser()
 		 $kol_tar = $kol_tar + 1
 		 sleep(3000)
 		 unlock()
+		 ExitLoop
 	  EndIf
    WEnd
 EndFunc
