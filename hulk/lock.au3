@@ -139,7 +139,7 @@ Func lock_1($belt_state)
 	  If $i == 5 Then
 		 $kol_tar = $kol_tar + 1
 	  EndIf
-	  ToolTip("kol_tar = " & $kol_tar &" "& $res[0] &"="& $belt_state[0] &" "& $res[1]  &"="&  $belt_state[1] &" "& $res[2]  &"="&  $belt_state[2] &" "& $res[3]  &"="&  $belt_state[3] &" "& $res[4]  &"="&  $belt_state[4] & " $i = "& $i , 0, 20)
+	  ToolTip("kol_tar = " & $kol_tar &" "& $res[0] &"="& $belt_state[4] &" "& $res[1]  &"="&  $belt_state[3] &" "& $res[2]  &"="&  $belt_state[2] &" "& $res[3]  &"="&  $belt_state[1] &" "& $res[4]  &"="&  $belt_state[0] & " $i = "& $i , 0, 20)
    WEnd   
    Return 111
 EndFunc
