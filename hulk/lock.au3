@@ -73,7 +73,7 @@ Func check_lock()
 	 ;EndIf
 	 $i = $i - 1
   Wend
-  ToolTip( $check_res[0] & $check_res[1] & $check_res[2] & $check_res[3] & $check_res[4], 0, 0)
+  ;ToolTip( $check_res[0] & $check_res[1] & $check_res[2] & $check_res[3] & $check_res[4], 0, 0)
    ;MsgBox(0, "EVE", $check_res)
    Return $check_res
 EndFunc
@@ -142,7 +142,7 @@ Func lock_1($belt_state)
 		 $kol_tar = $kol_tar + 1
 		 ExitLoop
 	  EndIf
-	  ;ToolTip("kol_tar = " & $kol_tar &" "& $res[0] &"="& $belt_state[4] &" "& $res[1]  &"="&  $belt_state[3] &" "& $res[2]  &"="&  $belt_state[2] &" "& $res[3]  &"="&  $belt_state[1] &" "& $res[4]  &"="&  $belt_state[0] & " $i = "& $i , 0, 20)
+	  ToolTip("kol_tar = " & $kol_tar &" "& $res[0] &"="& $belt_state[4] &" "& $res[1]  &"="&  $belt_state[3] &" "& $res[2]  &"="&  $belt_state[2] &" "& $res[3]  &"="&  $belt_state[1] &" "& $res[4]  &"="&  $belt_state[0] & " $i = "& $i , 0, 20)
    WEnd   
    Return 111
 EndFunc
