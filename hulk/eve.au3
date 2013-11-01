@@ -34,7 +34,7 @@ Func Main()
 		Else
 			cargo()
 			$belt_state = check_avalible_target()
-			If $belt_state[0] == 1 Then
+			If $belt_state > 0 Then
 				$res = lock_1($belt_state)
 			Else
 				$res = 0
