@@ -131,13 +131,16 @@ EndFunc
 Func lock_1($belt_state)
    Dim $res[5] = [0,0,0,0,0]
    $i = 0
-   while ($res[0] <> $belt_state[4] Or $res[1] <> $belt_state[3] Or $res[2] <> $belt_state[2] Or $res[3] <> $belt_state[1] Or $res[4] <> $belt_state[0]) And $i < 5
+   while $res[0] <> $belt_state[4] Or $res[1] <> $belt_state[3] Or $res[2] <> $belt_state[2] Or $res[3] <> $belt_state[1] Or $res[4] <> $belt_state[0]
 	  $res = check_lock()
-	  lock($res)
+	  if $res[0] <> $belt_state[4] Or $res[1] <> $belt_state[3] Or $res[2] <> $belt_state[2] Or $res[3] <> $belt_state[1] Or $res[4] <> $belt_state[0] Then
+		 lock($res)
+	  EndIf
 	  $i = $i + 1
 	  sleep(3000)
 	  If $i == 5 Then
 		 $kol_tar = $kol_tar + 1
+		 ExitLoop
 	  EndIf
 	  ToolTip("kol_tar = " & $kol_tar &" "& $res[0] &"="& $belt_state[4] &" "& $res[1]  &"="&  $belt_state[3] &" "& $res[2]  &"="&  $belt_state[2] &" "& $res[3]  &"="&  $belt_state[1] &" "& $res[4]  &"="&  $belt_state[0] & " $i = "& $i , 0, 20)
    WEnd   
