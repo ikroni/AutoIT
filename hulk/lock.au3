@@ -69,37 +69,47 @@ Func lock($target_x, $target_y)
   Send("{CTRLDOWN}")
   MouseClick("left", $target_x +5, $target_y + 5)
   Send("{CTRLUP}")
-   sleep(500)
+   sleep(3000)
 		 MouseMove(0, 0)
 EndFunc
 
 Func lock_1($belt_state)
+   ;;—оздаем массивы $res - дл€ хранени€ результатов проверки на залоченность
+   ;;$i дл€ счетчика попыток лока
    Dim $res[5] = [0,0,0,0,0]
    Dim $i[5] = [0,0,0,0,0]
    ;while $res[0] <> $belt_state[4] Or $res[1] <> $belt_state[3] Or $res[2] <> $belt_state[2] Or $res[3] <> $belt_state[1] Or $res[4] <> $belt_state[0]
+   ;;; —ложение количества залоченных целей
    $res_o = $res[0]+$res[1]+$res[2]+$res[3]+$res[4]
+   ;;;÷икл лока выход если залочено целей столько же сколько всего целей на белте и если залочено 5 целей
    while $res_o < $belt_state And $res_o < 5
+	  ;;ѕолучение данных о залоченности таргетов
 	  $res[0] = check_lock($target_area_0[0],$target_area_0[1]+$target_area_0[3]*$target_area_0[4],$target_area_0[2],$target_area_0[3])
 	  $res[1] = check_lock($target_area_1[0],$target_area_1[1]+$target_area_1[3]*$target_area_1[4],$target_area_1[2],$target_area_1[3])
 	  $res[2] = check_lock($target_area_2[0],$target_area_2[1]+$target_area_2[3]*$target_area_2[4],$target_area_2[2],$target_area_2[3])
 	  $res[3] = check_lock($target_area_3[0],$target_area_3[1]+$target_area_3[3]*$target_area_3[4],$target_area_3[2],$target_area_3[3])
 	  $res[4] = check_lock($target_area_4[0],$target_area_4[1]+$target_area_4[3]*$target_area_4[4],$target_area_4[2],$target_area_4[3])
+	  ;;;ќбновление данных о количстве таргетов на белте
 	  $belt_state = check_avalible_target()
+	  ;;; —ложение количества залоченных целей
 	  $res_o = $res[0]+$res[1]+$res[2]+$res[3]+$res[4]
+	  ;;;≈сли цель не залочена, то лочим ее, если она не залочилась 5-ть раз значит далеко, переходим к следующей €чейке таргета
 	  if $res[0] == 0 Then
 		 lock($target_area_0[0],$target_area_0[1]+$target_area_0[3]*$target_area_0[4])
 		 $i[0] = $i[0]+1
-		 if $i[0] == 3 Then
+		 if $i[0] == 5 Then
 			$target_area_0[4] = $target_area_0[4] + 1
 		 EndIf
 	  EndIf
+	  ;;;ѕроверка второго таргета
 	  if $res[1] == 0 Then
+		 ;;;провер€ем не сметилс€ ли вервый таргет на данную позицию, если сместилс€ - то смещаем область
 		 If $target_area_0[2] + $target_area_0[4]*$target_area_0[3] == $target_area_1[1] Then
 			$target_area_1[4] = $target_area_1[4] + 1
 		 EndIf
 		 lock($target_area_1[0],$target_area_1[1]+$target_area_1[3]*$target_area_1[4])
 		 $i[1] = $i[1]+1
-		 if $i[1] == 3 Then
+		 if $i[1] == 5 Then
 			$target_area_1[4] = $target_area_1[4] + 1
 		 EndIf
 	  EndIf
@@ -109,7 +119,7 @@ Func lock_1($belt_state)
 		 EndIf
 		 lock($target_area_2[0],$target_area_2[1]+$target_area_2[3]*$target_area_2[4])
 		 $i[2] = $i[2]+1
-		 if $i[2] == 3 Then
+		 if $i[2] == 5 Then
 			$target_area_2[4] = $target_area_2[4] + 1
 		 EndIf
 	  EndIf
@@ -119,7 +129,7 @@ Func lock_1($belt_state)
 		 EndIf
 		 lock($target_area_3[0],$target_area_3[1]+$target_area_3[3]*$target_area_3[4])
 		 $i[3] = $i[3]+1
-		 if $i[3] == 3 Then
+		 if $i[3] == 5 Then
 			$target_area_3[4] = $target_area_3[4] + 1
 		 EndIf
 	  EndIf
@@ -129,7 +139,7 @@ Func lock_1($belt_state)
 		 EndIf
 		 lock($target_area_4[0],$target_area_4[1]+$target_area_4[3]*$target_area_4[4])
 		 $i[4] = $i[4]+1
-		 if $i[4] == 3 Then
+		 if $i[4] == 5 Then
 			$target_area_4[4] = $target_area_4[4] + 1
 		 EndIf
 	  EndIf
