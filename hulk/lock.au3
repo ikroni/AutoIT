@@ -73,7 +73,7 @@ Func check_lock()
 	 ;EndIf
 	 $i = $i - 1
   Wend
-  ToolTip( $check_res[0] & $check_res[1] & $check_res[2] & $check_res[3] & $check_res[4], 0, 0)
+  ;ToolTip( $check_res[0] & $check_res[1] & $check_res[2] & $check_res[3] & $check_res[4], 0, 0)
    ;MsgBox(0, "EVE", $check_res)
    Return $check_res
 EndFunc
