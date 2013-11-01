@@ -42,7 +42,7 @@ Func Main()
 			if $res == 111 Then
 				laser() ;;;Pfge
 		 ;Drone($res)
-				If $belt_state[2] == 1 Then
+				If $belt_state > 3 Then
 					Check_dubl()
 				EndIf
 
