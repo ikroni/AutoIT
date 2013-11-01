@@ -137,7 +137,7 @@ EndFunc
 
 Func lock_1($belt_state)
    Dim $res[5] = [0,0,0,0,0]
-   Dim $i[0] = [0,0,0,0,0]
+   Dim $i[5] = [0,0,0,0,0]
    ;while $res[0] <> $belt_state[4] Or $res[1] <> $belt_state[3] Or $res[2] <> $belt_state[2] Or $res[3] <> $belt_state[1] Or $res[4] <> $belt_state[0]
    while $res[0]+$res[1]+$res[2]+$res[3]+$res[4] < $belt_state
 	  $res[0] = check_lock($target_area_0[0],$target_area_0[1]+$target_area_0[3]*$target_area_0[4],$target_area_0[2],$target_area_0[3])
