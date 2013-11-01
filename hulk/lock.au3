@@ -50,7 +50,7 @@ Func check_lock()
    $tar_col6 = 0xC5C5C5
    $disp = 0
    $j = 4
-   $i = $kol_tar+5
+   $i = $kol_tar
    Dim $check_res[5] = [0,0,0,0,0]
    ;;;Ищем цвета на месте первого таргета
    While $i >= 0
@@ -89,14 +89,14 @@ Func lock($check_lock)
    ;$belt_state = check_avalible_target()
    ;;Лок
    ;MsgBox(0, "EVE", $belt_state)
-   If $check_lock[0] == 0 Then
+   If $check_lock[4] == 0 Then
 	  $y = $target_y+$dist_y*$kol_tar
 	  Sleep(1000)
 	  Send("{CTRLDOWN}")
 	  MouseClick("left", $target_x +5, $y)
 	  Send("{CTRLUP}")
    EndIf
-   If $check_lock[1] == 0 Then
+   If $check_lock[3] == 0 Then
 	  sleep(1000)
 	  $y = $target_y+$dist_y*($kol_tar-1)
 	  Send("{CTRLDOWN}")
@@ -110,14 +110,14 @@ Func lock($check_lock)
 	  MouseClick("left", $target_x +5, $y)
 	  Send("{CTRLUP}")
    EndIf
-   If $check_lock[3] == 0 Then
+   If $check_lock[1] == 0 Then
 	  sleep(1000)
 	  $y = $target_y+5+$dist_y*($kol_tar-3)+5
 	  Send("{CTRLDOWN}")
 	  MouseClick("left", $target_x +5, $y)
 	  Send("{CTRLUP}")
    EndIf
-   If $check_lock[4] == 0 Then
+   If $check_lock[0] == 0 Then
 	  sleep(1000)
 	  $y = $target_y+5+$dist_y*($kol_tar-4)+5
 	  Send("{CTRLDOWN}")
