@@ -53,10 +53,10 @@ Func check_lock($target_x, $target_y, $dist_x, $dist_y)
 
 	  if IsArray($z1) Or IsArray($z2) or IsArray($z3) or IsArray($z4) or IsArray($z5) or IsArray($z6) Then ;;Or IsArray($z2)
 		 ;if $j >= 0 Then
-		 $state = 1		 
+		 $state = 1
 			;$j = $j -1
 		 ;EndIf
-		 
+
 	  EndIf
    Return $state
 EndFunc
@@ -78,6 +78,11 @@ Func lock_1($belt_state)
    ;;$i для счетчика попыток лока
    Dim $res[5] = [0,0,0,0,0]
    Dim $i[5] = [0,0,0,0,0]
+   $res[0] = check_lock($target_area_0[0],$target_area_0[1]+$target_area_0[3]*$target_area_0[4],$target_area_0[2],$target_area_0[3])
+	$res[1] = check_lock($target_area_1[0],$target_area_1[1]+$target_area_1[3]*$target_area_1[4],$target_area_1[2],$target_area_1[3])
+	$res[2] = check_lock($target_area_2[0],$target_area_2[1]+$target_area_2[3]*$target_area_2[4],$target_area_2[2],$target_area_2[3])
+	$res[3] = check_lock($target_area_3[0],$target_area_3[1]+$target_area_3[3]*$target_area_3[4],$target_area_3[2],$target_area_3[3])
+	$res[4] = check_lock($target_area_4[0],$target_area_4[1]+$target_area_4[3]*$target_area_4[4],$target_area_4[2],$target_area_4[3])
    ;while $res[0] <> $belt_state[4] Or $res[1] <> $belt_state[3] Or $res[2] <> $belt_state[2] Or $res[3] <> $belt_state[1] Or $res[4] <> $belt_state[0]
    ;;; Сложение количества залоченных целей
    $res_o = $res[0]+$res[1]+$res[2]+$res[3]+$res[4]
@@ -145,7 +150,7 @@ Func lock_1($belt_state)
 	  EndIf
 	  ToolTip(" tar 1 =" & $res[0] & " tar 2 =" & $res[1] & " tar 3 =" & $res[2] & " tar 4 =" & $res[3] & " tar 5 =" & $res[4] & " belt = " & $belt_state & " res_o = " & $res_o, 0, 30)
 	  ;ToolTip("kol_tar = " & $kol_tar &" "& $res[0] &"="& $belt_state[4] &" "& $res[1]  &"="&  $belt_state[3] &" "& $res[2]  &"="&  $belt_state[2] &" "& $res[3]  &"="&  $belt_state[1] &" "& $res[4]  &"="&  $belt_state[0] & " $i = "& $i , 0, 20)
-   WEnd   
+   WEnd
    Return 111
 EndFunc
 
