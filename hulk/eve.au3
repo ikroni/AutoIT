@@ -1,3 +1,6 @@
+#Region ;**** Directives created by AutoIt3Wrapper_GUI ****
+#AutoIt3Wrapper_Outfile=eve.exe
+#EndRegion ;**** Directives created by AutoIt3Wrapper_GUI ****
 ;;;;переменные цветов
 Global $Corp_flag = 0x4B0000 ;;;÷вет на флаге корпы
 Global $undock = 0xE6B800 ;;;÷вет галочек андока
