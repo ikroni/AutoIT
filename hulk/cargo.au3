@@ -28,7 +28,7 @@ Func clear_cargo()
    Dim $stack[4] = [172,322,30,55]
    $c = 0x010101
    Dim $1[4] = [95,280, 366,397]
-   Dim $ore[2] = [213,103]
+   Dim $ore[2] = [213,83]
    ;MsgBox(0,"2","2")
    WinActivate("EVE")
    MouseClick("right",$stack[0],$stack[1])
