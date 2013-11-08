@@ -114,7 +114,7 @@ Func lock_1($belt_state)
 		 EndIf
 		 lock($target_area_1[0],$target_area_1[1]+$target_area_1[3]*$target_area_1[4])
 		 $i[1] = $i[1]+1
-		 if $i[1] == 5 Then
+		 if $i[1] == 3 Then
 			$target_area_1[4] = $target_area_1[4] + 1
 		 EndIf
 	  EndIf
@@ -124,7 +124,7 @@ Func lock_1($belt_state)
 		 EndIf
 		 lock($target_area_2[0],$target_area_2[1]+$target_area_2[3]*$target_area_2[4])
 		 $i[2] = $i[2]+1
-		 if $i[2] == 5 Then
+		 if $i[2] == 3 Then
 			$target_area_2[4] = $target_area_2[4] + 1
 		 EndIf
 	  EndIf
@@ -134,7 +134,7 @@ Func lock_1($belt_state)
 		 EndIf
 		 lock($target_area_3[0],$target_area_3[1]+$target_area_3[3]*$target_area_3[4])
 		 $i[3] = $i[3]+1
-		 if $i[3] == 5 Then
+		 if $i[3] == 3 Then
 			$target_area_3[4] = $target_area_3[4] + 1
 		 EndIf
 	  EndIf
@@ -144,7 +144,7 @@ Func lock_1($belt_state)
 		 EndIf
 		 lock($target_area_4[0],$target_area_4[1]+$target_area_4[3]*$target_area_4[4])
 		 $i[4] = $i[4]+1
-		 if $i[4] == 5 Then
+		 if $i[4] == 3 Then
 			$target_area_4[4] = $target_area_4[4] + 1
 		 EndIf
 	  EndIf
