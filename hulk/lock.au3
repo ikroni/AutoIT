@@ -148,7 +148,7 @@ Func lock_1($belt_state)
 			$target_area_4[4] = $target_area_4[4] + 1
 		 EndIf
 	  EndIf
-	  ToolTip(" tar 1 =" & $res[0] & " tar 2 =" & $res[1] & " tar 3 =" & $res[2] & " tar 4 =" & $res[3] & " tar 5 =" & $res[4] & " belt = " & $belt_state & " res_o = " & $res_o, 0, 30)
+	  ToolTip(" tar 1 =" & $res[0] & " tar 2 =" & $res[1] & " tar 3 =" & $res[2] & " tar 4 =" & $res[3] & " tar 5 =" & $res[4] & " belt = " & $belt_state & " res_o = " & $res_o & " 0 = " & $i[0] & " 1 = " & $i[1] & " 2 = " & $i[2] & " 3 = " & $i[3] & " 4 = " & $i[4] , 0, 30)
 	  ;ToolTip("kol_tar = " & $kol_tar &" "& $res[0] &"="& $belt_state[4] &" "& $res[1]  &"="&  $belt_state[3] &" "& $res[2]  &"="&  $belt_state[2] &" "& $res[3]  &"="&  $belt_state[1] &" "& $res[4]  &"="&  $belt_state[0] & " $i = "& $i , 0, 20)
    WEnd
    Return 111
