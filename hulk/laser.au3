@@ -132,7 +132,7 @@ Func laser()
 	  laser_act($res)
 	  sleep(5000)
 	  $t = $t + 1
-	  if $t == 2 Then
+	  if $t == 3 Then
 		 $kol_tar = $kol_tar + 1
 		 sleep(1000)
 		 unlock()

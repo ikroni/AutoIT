@@ -88,6 +88,26 @@ Func lock_1($belt_state)
    $res_o = $res[0]+$res[1]+$res[2]+$res[3]+$res[4]
    ;;;Цикл лока выход если залочено целей столько же сколько всего целей на белте и если залочено 5 целей
    while $res_o < $belt_state And $res_o < 5
+	  ;;;Проверяем не сдвинулись ли таргеты
+	  If $target_area_0[1] + $target_area_0[4]*$target_area_0[3] == $target_area_1[1]+$target_area_1[4]*$target_area_1[3]  Then
+			$target_area_1[4] = $target_area_1[4] + 1
+			$i[1] = 0
+		 EndIf
+		 If $target_area_1[1] + $target_area_1[4]*$target_area_1[3] == $target_area_2[1]+$target_area_2[4]*$target_area_2[3]  Then
+			$target_area_2[4] = $target_area_2[4] + 1
+			$i[2] = 0
+		 EndIf
+		  If $target_area_2[1] + $target_area_2[4]*$target_area_2[3] == $target_area_3[1]+$target_area_3[4]*$target_area_3[3]  Then
+			$target_area_3[4] = $target_area_3[4] + 1
+			$i[3] = 0
+		 EndIf
+		 If $target_area_3[1] + $target_area_3[4]*$target_area_3[3] == $target_area_4[1]+$target_area_4[4]*$target_area_4[3] Then
+			$target_area_4[4] = $target_area_4[4] + 1
+			$i[4] = 0
+		 EndIf
+		 ;If $target_area_3[1] + $target_area_3[4]*$target_area_3[3] == $target_area_4[1] Then
+			;$target_area_4[4] = $target_area_4[4] + 1
+		 ;EndIf
 	  ;;Получение данных о залоченности таргетов
 	  $res[0] = check_lock($target_area_0[0],$target_area_0[1]+$target_area_0[3]*$target_area_0[4],$target_area_0[2],$target_area_0[3])
 	  $res[1] = check_lock($target_area_1[0],$target_area_1[1]+$target_area_1[3]*$target_area_1[4],$target_area_1[2],$target_area_1[3])
@@ -102,50 +122,55 @@ Func lock_1($belt_state)
 	  if $res[0] == 0 Then
 		 lock($target_area_0[0],$target_area_0[1]+$target_area_0[3]*$target_area_0[4])
 		 $i[0] = $i[0]+1
-		 if $i[0] == 5 Then
+		 if $i[0] == 3 Then
 			$target_area_0[4] = $target_area_0[4] + 1
+			$i[0] = 0
 		 EndIf
 	  EndIf
 	  ;;;Проверка второго таргета
 	  if $res[1] == 0 Then
 		 ;;;проверяем не сметился ли вервый таргет на данную позицию, если сместился - то смещаем область
-		 If $target_area_0[2] + $target_area_0[4]*$target_area_0[3] == $target_area_1[1] Then
-			$target_area_1[4] = $target_area_1[4] + 1
-		 EndIf
+		 ;If $target_area_0[2] + $target_area_0[4]*$target_area_0[3] == $target_area_1[1] Then
+			;$target_area_1[4] = $target_area_1[4] + 1
+		 ;EndIf
 		 lock($target_area_1[0],$target_area_1[1]+$target_area_1[3]*$target_area_1[4])
 		 $i[1] = $i[1]+1
 		 if $i[1] == 3 Then
 			$target_area_1[4] = $target_area_1[4] + 1
+			$i[1] = 0
 		 EndIf
 	  EndIf
 	  if $res[2] == 0 Then
-		 If $target_area_1[2] + $target_area_1[4]*$target_area_1[3] == $target_area_2[1] Then
-			$target_area_2[4] = $target_area_2[4] + 1
-		 EndIf
+		; If $target_area_1[2] + $target_area_1[4]*$target_area_1[3] == $target_area_2[1] Then
+		;	$target_area_2[4] = $target_area_2[4] + 1
+		 ;EndIf
 		 lock($target_area_2[0],$target_area_2[1]+$target_area_2[3]*$target_area_2[4])
 		 $i[2] = $i[2]+1
 		 if $i[2] == 3 Then
 			$target_area_2[4] = $target_area_2[4] + 1
+			$i[2] = 0
 		 EndIf
 	  EndIf
 	  if $res[3] == 0 Then
-		 If $target_area_2[2] + $target_area_2[4]*$target_area_2[3] == $target_area_3[1] Then
-			$target_area_3[4] = $target_area_3[4] + 1
-		 EndIf
+		 ;If $target_area_2[2] + $target_area_2[4]*$target_area_2[3] == $target_area_3[1] Then
+			;$target_area_3[4] = $target_area_3[4] + 1
+		 ;EndIf
 		 lock($target_area_3[0],$target_area_3[1]+$target_area_3[3]*$target_area_3[4])
 		 $i[3] = $i[3]+1
 		 if $i[3] == 3 Then
 			$target_area_3[4] = $target_area_3[4] + 1
+			$i[3] = 0
 		 EndIf
 	  EndIf
 	  if $res[4] == 0 Then
-		 If $target_area_3[2] + $target_area_3[4]*$target_area_3[3] == $target_area_4[1] Then
-			$target_area_4[4] = $target_area_4[4] + 1
-		 EndIf
+		 ;If $target_area_3[2] + $target_area_3[4]*$target_area_3[3] == $target_area_4[1] Then
+			;$target_area_4[4] = $target_area_4[4] + 1
+		 ;EndIf
 		 lock($target_area_4[0],$target_area_4[1]+$target_area_4[3]*$target_area_4[4])
 		 $i[4] = $i[4]+1
 		 if $i[4] == 3 Then
 			$target_area_4[4] = $target_area_4[4] + 1
+			$i[4]=0
 		 EndIf
 	  EndIf
 	  ToolTip(" tar 1 =" & $res[0] & " tar 2 =" & $res[1] & " tar 3 =" & $res[2] & " tar 4 =" & $res[3] & " tar 5 =" & $res[4] & " belt = " & $belt_state & " res_o = " & $res_o & " 0 = " & $i[0] & " 1 = " & $i[1] & " 2 = " & $i[2] & " 3 = " & $i[3] & " 4 = " & $i[4] , 0, 30)
